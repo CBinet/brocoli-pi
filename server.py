@@ -25,7 +25,7 @@ outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow 
 def getOutputs():
     rtrn = []
     for output in outputs:
-        rtrn.append(output.toJSON())
+        rtrn.append(output.toDict())
         print (output.toDict())
     
     return make_response(jsonify({'results' : rtrn}), 200)
