@@ -14,7 +14,7 @@ outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow 
 def getOutput(id):
     output = findOutput(id)
     if output:
-        return jsonify(result = jsonify(output))
+        return jsonify(result = jsonify(id = output.id, info = output.info, state = output.state))
     else:
         return "NOT_FOUND : This output ID is not binded."
 
