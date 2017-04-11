@@ -2,6 +2,7 @@
 # April 11, 2017
 
 # Imports
+from flask import jsonify
 import RPi.GPIO as GPIO
 
 # Class to represent a GPIO
@@ -17,3 +18,6 @@ class Output:
     def toggle(self):
         self.state = not self.state
         GPIO.output(self.id,self.state)
+
+    def toJSON(self):
+        return jsonify(id = output.id, info = output.info, state = output.state)

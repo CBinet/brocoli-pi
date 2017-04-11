@@ -3,7 +3,6 @@
 
 # Imports
 from flask import Flask
-from flask import jsonify
 from Output import Output
 import RPi.GPIO as GPIO
 
@@ -26,7 +25,7 @@ outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow 
 def getOutput(id):
     output = findOutput(id)
     if output:
-        return jsonify(id = output.id, info = output.info, state = output.state)
+        return output.toJSON()
     else:
         return "NOT_FOUND : This output ID is not binded."
 
@@ -35,7 +34,7 @@ def toggle(id):
     output = findOutput(id)
     if output:
         output.toggle()
-        return jsonify(id = output.id, info = output.info, state = output.state)
+        return output.toJSON()
     else:
         return "NOT_FOUND : This output ID is not binded."
 
