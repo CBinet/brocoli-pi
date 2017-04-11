@@ -12,7 +12,7 @@ output19 = Output(19)
 
 @app.route('/status')
 def getStatus():
-    return output19
+    return output19.getStatus()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

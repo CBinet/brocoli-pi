@@ -6,3 +6,9 @@ class Output:
     def __init__(self, id):
         self.id = id
 	self.status = False
+
+    def getId():
+        return id
+
+    def getStatus():
+        return status
