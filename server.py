@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 from flask import Flask
-import Ouput
+from Output import Output
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -8,11 +8,11 @@ GPIO.setup(19, GPIO.OUT)
 
 app = Flask(__name__)
 
-output19 = new Ouput(19)
-print (output19.id)
-@app.route('/:id/status')
-def index():
-    return 'Hello world'
+output19 = Output(19)
+
+@app.route('/status')
+def getStatus():
+    return output19
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
