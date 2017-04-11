@@ -8,11 +8,14 @@ GPIO.setup(19, GPIO.OUT)
 
 app = Flask(__name__)
 
-output19 = Output(19)
+outputs = [Output(19)]
 
-@app.route('/status')
-def getStatus():
-    return output19.getStatus()
+@app.route('/<id>/status')
+def getStatus(id):
+    for output in outputs:
+	if id == output.getId():
+	    return output.getCurrentState()
+    return "NOT_FOUND : This output ID is not binded."
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

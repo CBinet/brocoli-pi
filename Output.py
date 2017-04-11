@@ -1,14 +1,14 @@
 class Output:
 
-    id = 0
-    status = False
-
     def __init__(self, id):
         self.id = id
-	self.status = False
+	self.state = False
 
-    def getId():
-        return id
+    def getId(self):
+        return str(self.id)
 
-    def getStatus():
-        return status
+    def getCurrentState(self):
+        if self.state:
+	    return "On"
+	else:
+	    return "Off"
