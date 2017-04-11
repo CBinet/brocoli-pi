@@ -27,24 +27,24 @@ def getOutputs():
     for output in outputs:
         rtrn.append(output.toJSON())
     
-    return jsonify({'results' : rtrn})
+    return make_response(jsonify({'results' : rtrn}), 200)
 
 @app.route('/outputs/<id>')
 def getOutput(id):
     output = findOutput(id)
     if output:
-        return output.toJSON()
+        return make_response(output.toJSON(), 200)
     else:
-        return "NOT_FOUND : This output ID is not binded."
+        return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
 @app.route('/outputs/<id>/toggle')
 def toggle(id):
     output = findOutput(id)
     if output:
         output.toggle()
-        return output.toJSON()
+        return make_response(output.toJSON(), 200)
     else:
-        return "NOT_FOUND : This output ID is not binded."
+        return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
 # -- Helper functions --
 
