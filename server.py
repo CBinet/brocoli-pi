@@ -23,9 +23,11 @@ outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow 
 # -- API Routes -- 
 @app.route('/outputs')
 def getOutputs():
-    results = [ output.toJSON() for output in outputs ]
-    print (results)
-    return "results"
+    rtrn = []
+    for output in outputs:
+        rtrn.append(output.toJSON())
+    print (rtrn)
+    return rtrn
 
 @app.route('/outputs/<id>')
 def getOutput(id):
