@@ -20,4 +20,4 @@ class Output:
         GPIO.output(self.id,self.state)
 
     def toJSON(self):
-        return jsonify(id = self.id, info = self.info, state = self.state)
+        return jsonify({'id' : self.id, 'info' : self.info, 'state' : self.state})
