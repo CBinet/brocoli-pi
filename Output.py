@@ -19,5 +19,8 @@ class Output:
         self.state = not self.state
         GPIO.output(self.id,self.state)
 
+    def toDict(self):
+        return {'id' : self.id, 'info' : self.info, 'state' : self.state}
+
     def toJSON(self):
-        return jsonify({'id' : self.id, 'info' : self.info, 'state' : self.state})
+        return jsonify(self.toDict())

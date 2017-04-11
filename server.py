@@ -26,7 +26,7 @@ def getOutputs():
     rtrn = []
     for output in outputs:
         rtrn.append(output.toJSON())
-        print (output.toJSON())
+        print (output.toDict())
     
     return make_response(jsonify({'results' : rtrn}), 200)
 
