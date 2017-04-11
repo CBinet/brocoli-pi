@@ -8,13 +8,30 @@ GPIO.setmode(GPIO.BCM)
 
 app = Flask(__name__)
 
-outputs = [Output(18), Output(19)]
+outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
+
+@app.route('/<id>')
+def getStatus(id):
+    output = findOutput(id)
+    if output:
+        return jsonify(result = output)
+    else:
+        return "NOT_FOUND : This output ID is not binded."
+
 
 @app.route('/<id>/status')
 def getStatus(id):
     output = findOutput(id)
     if output:
         return jsonify(result = output.getCurrentState())
+    else:
+        return "NOT_FOUND : This output ID is not binded."
+
+@app.route('/<id>/info')
+def getInfo(id):
+    output = findOutput(id)
+    if output:
+        return jsonify(result = output.getInfo())
     else:
         return "NOT_FOUND : This output ID is not binded."
 
@@ -26,7 +43,6 @@ def toggle(id):
         return jsonify(result = output.getCurrentState())
     else:
         return "NOT_FOUND : This output ID is not binded."
-
 
 def findOutput(id):
     for output in outputs:

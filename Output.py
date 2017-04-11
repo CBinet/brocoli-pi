@@ -2,10 +2,11 @@ import RPi.GPIO as GPIO
 
 class Output:
 
-    def __init__(self, id):
+    def __init__(self, id, info):
         GPIO.setup(id, GPIO.OUT)
         self.id = id
-	self.state = False
+	    self.state = False
+        self.info = info
 
     def toggle(self):
         self.state = not self.state
@@ -16,3 +17,6 @@ class Output:
 
     def getCurrentState(self):
 	    return self.state
+
+    def getInfo(self):
+        return self.info
