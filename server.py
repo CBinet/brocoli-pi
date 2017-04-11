@@ -1,16 +1,28 @@
-import RPi.GPIO as GPIO
-from flask import Flask
-from Output import Output
-from flask import jsonify
+# Created by Charles
+# April 11, 2017
 
+# Imports
+from flask import Flask
+from flask import jsonify
+from Output import Output
+import RPi.GPIO as GPIO
+
+# GPIO setup
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
+# Flask setup
 app = Flask(__name__)
 
+# Here is where you instanciate the pins you want to use :
+# Example: 
+#    Output(1, "Red Light") 
+# This will setup the GPIO output pin 1 and will put up "Red Light" as the info-label.
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
 
-@app.route('/<id>')
+# -- API Routes -- 
+
+@app.route('/outputs/<id>')
 def getOutput(id):
     output = findOutput(id)
     if output:
@@ -18,35 +30,20 @@ def getOutput(id):
     else:
         return "NOT_FOUND : This output ID is not binded."
 
-
-@app.route('/<id>/status')
-def getStatus(id):
-    output = findOutput(id)
-    if output:
-        return jsonify(result = output.getCurrentState())
-    else:
-        return "NOT_FOUND : This output ID is not binded."
-
-@app.route('/<id>/info')
-def getInfo(id):
-    output = findOutput(id)
-    if output:
-        return jsonify(result = output.getInfo())
-    else:
-        return "NOT_FOUND : This output ID is not binded."
-
-@app.route('/<id>/toggle')
+@app.route('/outputs/<id>/toggle')
 def toggle(id):
     output = findOutput(id)
     if output:
         output.toggle()
-        return jsonify(result = output.getCurrentState())
+        return jsonify(id = output.id, info = output.info, state = output.state)
     else:
         return "NOT_FOUND : This output ID is not binded."
 
+# -- Helper functions --
+
 def findOutput(id):
     for output in outputs:
-	if id == str(output.getId()):
+	if id == str(output.id):
 	    return output
 
 if __name__ == '__main__':
