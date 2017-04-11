@@ -19,6 +19,15 @@ def getStatus(id):
     else:
         return "NOT_FOUND : This output ID is not binded."
 
+@app.route('/<id>/toggle')
+def toggle(id):
+    output = findOutput(id)
+    if output:
+        output.toggle()
+        return jsonify(result = output.getCurrentState())
+    else:
+        return "NOT_FOUND : This output ID is not binded."
+
 
 def findOutput(id):
     for output in outputs:

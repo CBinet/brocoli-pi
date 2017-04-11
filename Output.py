@@ -6,6 +6,9 @@ class Output:
         self.id = id
 	self.state = False
 
+    def toggle(self):
+        self.state = !self.state
+
     def getId(self):
         return self.id
 
