@@ -7,7 +7,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(19, GPIO.OUT)
 
 x = 0
-while x < 5
+while x < 5:
     GPIO.output(19,True)
     time.sleep(1)
     GPIO.output(19,False)
