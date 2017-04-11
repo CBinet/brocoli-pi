@@ -8,7 +8,4 @@ class Output:
         return str(self.id)
 
     def getCurrentState(self):
-        if self.state:
-	    return "On"
-	else:
-	    return "Off"
+	    return {"status" : self.state}
