@@ -1,4 +1,5 @@
 #!/bin/bash
 
-echo "Hello World!"
-
+echo "Hello my Lord !"
+git pull
+python script.py
