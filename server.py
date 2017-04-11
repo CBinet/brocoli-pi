@@ -11,7 +11,7 @@ app = Flask(__name__)
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
 
 @app.route('/<id>')
-def getStatus(id):
+def getOutput(id):
     output = findOutput(id)
     if output:
         return jsonify(result = output)
