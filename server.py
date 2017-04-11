@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from flask import Flask
 from Output import Output
+from flask import jsonify
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -14,7 +15,7 @@ outputs = [Output(19)]
 def getStatus(id):
     for output in outputs:
 	if id == output.getId():
-	    return output.getCurrentState()
+	    return jsonify(result = output.getCurrentState())
     return "NOT_FOUND : This output ID is not binded."
 
 if __name__ == '__main__':

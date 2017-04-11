@@ -1,4 +1,4 @@
-from flask import jsonify
+
 
 class Output:
 
@@ -7,7 +7,7 @@ class Output:
 	self.state = False
 
     def getId(self):
-        return str(self.id)
+        return self.id
 
     def getCurrentState(self):
-	    return jsonify(result=self.state)
+	    return self.state
