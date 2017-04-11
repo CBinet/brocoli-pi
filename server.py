@@ -25,7 +25,7 @@ outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow 
 def getOutputs():
     results = [ output.toJSON() for output in outputs ]
     print (results)
-    return results
+    return "results"
 
 @app.route('/outputs/<id>')
 def getOutput(id):
