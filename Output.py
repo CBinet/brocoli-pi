@@ -7,7 +7,7 @@ class Output:
 	self.state = False
 
     def toggle(self):
-        self.state = !self.state
+        self.state = not self.state
 
     def getId(self):
         return self.id
