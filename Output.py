@@ -5,5 +5,5 @@ class Output(id):
     def __init__(self):
         self.id = id
 
-    def getId:
+    def getId():
         return id
