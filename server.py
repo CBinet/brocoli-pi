@@ -9,7 +9,7 @@ GPIO.setup(19, GPIO.OUT)
 
 app = Flask(__name__)
 
-outputs = [Output(19)]
+outputs = [Output(18), Output(19)]
 
 @app.route('/<id>/status')
 def getStatus(id):
