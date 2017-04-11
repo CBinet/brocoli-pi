@@ -9,11 +9,13 @@ GPIO.setup(19, GPIO.OUT)
 print ("Time : " + str(datetime.datetime.now().time()))
 
 x = 0
+pin = 17
 while x < 3:
-    GPIO.output(19,True)
+    GPIO.output(pin,True)
     time.sleep(1)
-    GPIO.output(19,False)
+    GPIO.output(pin,False)
     time.sleep(1)	
     x = x + 1
+    pin = pin + 1
 
 
