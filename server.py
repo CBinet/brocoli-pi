@@ -9,7 +9,7 @@ GPIO.setup(19, GPIO.OUT)
 app = Flask(__name__)
 
 output19 = new Ouput(19)
-print (output19.getId())
+print (output19.id)
 @app.route('/:id/status')
 def index():
     return 'Hello world'

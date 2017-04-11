@@ -1,9 +1,6 @@
-class Output(id):
+class Output:
 
     id = 0
 
-    def __init__(self):
+    def __init__(self, id):
         self.id = id
-
-    def getId():
-        return id
