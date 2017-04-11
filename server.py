@@ -20,6 +20,10 @@ app = Flask(__name__)
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
 
 # -- API Routes -- 
+@app.route('/outputs')
+def getOutputs():
+    results = [ output.as_dict() for output in outputs ]
+    return jsonify({count: len(results), results: results)
 
 @app.route('/outputs/<id>')
 def getOutput(id):
