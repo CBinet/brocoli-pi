@@ -1,3 +1,5 @@
+from flask import jsonify
+
 class Output:
 
     def __init__(self, id):
@@ -8,4 +10,4 @@ class Output:
         return str(self.id)
 
     def getCurrentState(self):
-	    return {"status" : self.state}
+	    return jsonify(result=self.state)
