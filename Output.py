@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 class Output:
 
     def __init__(self, id):
+        GPIO.setup(id, GPIO.OUT)
         self.id = id
 	self.state = False
 

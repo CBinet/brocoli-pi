@@ -5,7 +5,6 @@ from flask import jsonify
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(19, GPIO.OUT)
 
 app = Flask(__name__)
 
