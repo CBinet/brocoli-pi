@@ -4,7 +4,7 @@
 # Imports
 from flask import Flask
 from flask import jsonify,make_response
-from Output import src/Output
+from src.Output import Output
 import RPi.GPIO as GPIO
 
 # GPIO setup
