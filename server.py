@@ -4,7 +4,7 @@
 # Imports
 from flask import Flask
 from flask import jsonify,make_response
-from Output import Output
+from Output import src/Output
 import RPi.GPIO as GPIO
 
 # GPIO setup
@@ -21,15 +21,20 @@ app = Flask(__name__)
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
 
 # -- API Routes -- 
+
+# Returns all of the outputs
+# @return JSON of the outputs list
 @app.route('/outputs')
 def getOutputs():
     rtrn = []
     for output in outputs:
         rtrn.append(output.toDict())
-        print (output.toDict())
     
     return make_response(jsonify({'results' : rtrn}), 200)
 
+# Returns the output at location <id>
+# @params id : Id to to match with
+# @return JSON of the selected output
 @app.route('/outputs/<id>')
 def getOutput(id):
     output = findOutput(id)
@@ -38,6 +43,9 @@ def getOutput(id):
     else:
         return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
+# Toggle the voltage on the output at location <id>
+# @params id : Id to to match with
+# @return JSON of the selected output
 @app.route('/outputs/<id>/toggle')
 def toggle(id):
     output = findOutput(id)
@@ -49,10 +57,15 @@ def toggle(id):
 
 # -- Helper functions --
 
+# Returns the output with 'id'
+# @params id : Id to match with
+# @return Selected output
 def findOutput(id):
     for output in outputs:
 	if id == str(output.id):
 	    return output
+
+# -- Main --
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
