@@ -3,6 +3,7 @@
 
 # Imports
 from flask import Flask
+from flask import jsonify
 from Output import Output
 import RPi.GPIO as GPIO
 
