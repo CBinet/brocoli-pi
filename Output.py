@@ -8,6 +8,7 @@ class Output:
 
     def toggle(self):
         self.state = not self.state
+        GPIO.output(self.id,self.state)
 
     def getId(self):
         return self.id
