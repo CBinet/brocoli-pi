@@ -26,7 +26,7 @@ def getOutputs():
     rtrn = []
     for output in outputs:
         rtrn.append(output.toJSON())
-    print jsonify(rtrn)
+    print (jsonify(rtrn))
     return jsonify(rtrn)
 
 @app.route('/outputs/<id>')
