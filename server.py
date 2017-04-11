@@ -14,7 +14,7 @@ outputs = [Output(19)]
 @app.route('/<id>/status')
 def getStatus(id):
     for output in outputs:
-	if id == output.getId():
+	if id == str(output.getId()):
 	    return jsonify(result = output.getCurrentState())
     return "NOT_FOUND : This output ID is not binded."
 
