@@ -57,6 +57,40 @@ def toggle(id):
     else:
         return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
+
+# Returns all of the groups
+# @return JSON of the groups list
+@app.route('/groups')
+def getGroups():
+    rtrn = []
+    for group in groups:
+        rtrn.append(group.toDict())
+    
+    return make_response(jsonify({'results' : rtrn}), 200)
+
+# Returns the group <id>
+# @params id : Id to to match with
+# @return JSON of the selected group
+@app.route('/groups/<id>')
+def getGroup(id):
+    group = findGroup(id)
+    if group:
+        return make_response(group.toJSON(), 200)
+    else:
+        return make_response("NOT_FOUND : This group ID is not binded.", 400)
+
+# Toggle the voltage on the outputs of group <id>
+# @params id : Id to to match with
+# @return JSON of the selected group
+@app.route('/groups/<id>/toggle')
+def toggle(id):
+    group = findGroup(id)
+    if group:
+        group.toggle()
+        return make_response(group.toJSON(), 200)
+    else:
+        return make_response("NOT_FOUND : This group ID is not binded.", 400)
+
 # -- Helper functions --
 
 # Returns the output with 'id'
@@ -66,6 +100,14 @@ def findOutput(id):
     for output in outputs:
 	if id == str(output.id):
 	    return output
+
+# Returns the group  'id'
+# @params id : Id to match with
+# @return Selected group
+def findGroup(id):
+    for group in groups:
+	if id == str(group.id):
+	    return group
 
 # -- Main --
 
