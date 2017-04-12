@@ -39,7 +39,7 @@ def getOutputs():
     for output in outputs:
         rtrn.append(output.toDict())
     
-    return Response(jsonify({'results' : rtrn}), 200, mimetype='application/json')
+    return make_response(jsonify({'results' : rtrn}), 200)
 
 # Returns the output at location <id>
 # @params id : Id to to match with
@@ -48,9 +48,9 @@ def getOutputs():
 def getOutput(id):
     output = findOutput(id)
     if output:
-        return Response(output.toJSON(), 200, mimetype='application/json')
+        return make_response(output.toJSON(), 200)
     else:
-        return Response("NOT_FOUND : This output ID is not binded.", 400)
+        return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
 # Toggle the voltage on the output at location <id>
 # @params id : Id to to match with
@@ -60,9 +60,9 @@ def toggleOutput(id):
     output = findOutput(id)
     if output:
         output.toggle()
-        return Response(output.toJSON(), 200, mimetype='application/json')
+        return make_response(output.toJSON(), 200)
     else:
-        return Response("NOT_FOUND : This output ID is not binded.", 400)
+        return make_response("NOT_FOUND : This output ID is not binded.", 400)
 
 
 # Returns all of the groups
@@ -82,9 +82,9 @@ def getGroups():
 def getGroup(id):
     group = findGroup(id)
     if group:
-        return Response(group.toJSON(), 200, mimetype='application/json')
+        return make_response(group.toJSON(), 200)
     else:
-        return Response("NOT_FOUND : This group ID is not binded.", 400)
+        return make_response("NOT_FOUND : This group ID is not binded.", 400)
 
 # Toggle the voltage on the outputs of group <id>
 # @params id : Id to to match with
@@ -94,9 +94,9 @@ def toggleGroup(id):
     group = findGroup(id)
     if group:
         group.toggle()
-        return Reponse(group.toJSON(), 200, mimetype='application/json')
+        return make_response(group.toJSON(), 200)
     else:
-        return Reponse("NOT_FOUND : This group ID is not binded.", 400)
+        return make_response("NOT_FOUND : This group ID is not binded.", 400)
 
 # Gets the current weather. 
 # Requires a query parameter 'city'.
