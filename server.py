@@ -4,7 +4,7 @@
 # Imports
 import requests
 import json
-from flask import Flask,Response,jsonify,request
+from flask import Flask,Response,make_response,jsonify,request
 from modules.GPIOControls.Output import Output
 from modules.GPIOControls.Group import Group
 import RPi.GPIO as GPIO
@@ -73,7 +73,7 @@ def getGroups():
     for group in groups:
         rtrn.append(group.toDict())
     
-    return Response(jsonify({'results' : rtrn}), 200, mimetype='application/json')
+    return make_response(jsonify({'results' : rtrn}), 200)
 
 # Returns the group <id>
 # @params id : Id to to match with
