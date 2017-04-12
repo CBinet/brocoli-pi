@@ -99,6 +99,8 @@ def toggleGroup(id):
     else:
         return make_response("NOT_FOUND : This group ID is not binded.", 400)
 
+# Gets the todays forecast. 
+# Requires a query parameter 'city'.
 @app.route('/weather/today')
 def getWeatherToday():
     city = request.args.get('city');
@@ -108,6 +110,8 @@ def getWeatherToday():
     else :
         return make_response("INVALID QUERY : Missing the city parameter.", 400)
 
+# Gets the comming days forecast. 
+# Requires a query parameter 'city'.
 @app.route('/weather/forecast')
 def getWeatherForecast():
     city = request.args.get('city');
