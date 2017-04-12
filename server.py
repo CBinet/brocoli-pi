@@ -98,7 +98,7 @@ def toggleGroup(id):
     else:
         return Reponse("NOT_FOUND : This group ID is not binded.", 400)
 
-# Gets the todays forecast. 
+# Gets the current weather. 
 # Requires a query parameter 'city'.
 @app.route('/weather/current')
 def getWeatherCurrent():
@@ -109,14 +109,14 @@ def getWeatherCurrent():
     else :
         return Response("INVALID QUERY : Missing the city parameter.", 400)
 
-# Gets the comming days forecast. 
+# Gets the current day forecast. 
 # Requires a query parameter 'city'.
 @app.route('/weather/forecast')
 def getWeatherForecast():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/forecast.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
-        return Response(json.dumps(r.json(), indent=4), 200, mimetype='application/json')
+        return Response(json.dumps(r.json()['forecast'], indent=4), 200, mimetype='application/json')
     else :
         return Reponse("INVALID QUERY : Missing the city parameter.", 400)
 
