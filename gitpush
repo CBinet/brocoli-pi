@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Pushing latest version on the repository."
 git add .
 git commit -m "auto-commit"
 git push
