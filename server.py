@@ -106,7 +106,7 @@ def getWeatherToday():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
-        return make_response(json.dumps(r.json(), indent=4), 200)
+        return make_response(json.dumps(r.json()['current'], indent=4), 200)
     else :
         return make_response("INVALID QUERY : Missing the city parameter.", 400)
 
@@ -117,8 +117,7 @@ def getWeatherForecast():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/forecast.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
-        print (json.dumps(r.json(), indent=4)['current'])
-        return make_response(json.dumps(r.json(), indent=4), 200)
+        return make_response(json.dumps(r.json()['forecast'], indent=4), 200)
     else :
         return make_response("INVALID QUERY : Missing the city parameter.", 400)
 
