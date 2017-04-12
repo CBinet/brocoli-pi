@@ -101,7 +101,7 @@ def toggleGroup(id):
 
 @app.route('/')
 def get_data():
-    r = requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob');
+    r = requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=Paris');
     return make_response(json.dumps(r.json(), indent=4), 200)
 
 # -- Helper functions --
