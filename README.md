@@ -31,9 +31,9 @@ at the end of the file :
 python <where-your-server.py-is-located>/server.py
 ```
 Extras - For example, your git repository is located in your
-home folder, you want the latest version of WebPi,
-to start the server and add a greeting message, 
-you would do this :
+home folder. If you want the latest version of WebPi,
+then start the server and also add a greeting message, 
+you would do something like this :
 ```sh
 echo Greetings, human.
 cd ~/
