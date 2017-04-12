@@ -15,7 +15,7 @@ sudo apt-get install git --y
 ### Clone the repository :
 Navigate where you want to create the folder and clone the repository :
 ```sh
-git clone https://github.com/WebPI.git
+git clone https://github.com/WebPi.git
 ```
 
 ### Launch WebPi
