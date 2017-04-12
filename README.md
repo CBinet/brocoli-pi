@@ -2,36 +2,38 @@
 
 # Installation
 
-### 0 - You should already have git installed. If not :
+### Install git :
+Git is installed by default on most raspberrys.
+If git is not installed, you can install it like this :
 ```sh
 sudo apt-get install git --y
 ```
 
-### 1 - Clone the repository :
-Navigate where you want to create the folder and clone the repository <br>
+### Clone the repository :
+Navigate where you want to create the folder and clone the repository
 ```sh
 git clone https://github.com/WebPI.git
 ```
 
-### 2 - Launch WebPi
+### Launch WebPi
 ```sh
 python server.py
 ```
 
 ### Extras - Setup autorun on bootup
-1 - If you want to start the server automatically when
-you boot up your raspberry pi, you can modify the .profile file
+If you want to start the server automatically when
+you boot up your raspberry, you can modify the .profile file
 like this :
 ```sh
 sudo nano ~/.profile
 ```
-2 - This will open terminal text editor. Add the following line 
+This will open terminal text editor. Add the following line 
 at the end of the file : 
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-Extras - For example, your git repository is located in your
-home folder. If you want the latest version of WebPi,
+**Example** : if your git repository is located in your
+home folder. If you want the latest version of *WebPi*,
 then start the server and also add a greeting message, 
 you would do something like this :
 ```sh
@@ -43,7 +45,6 @@ python server.py
 
 # Using WebPi
 To run the server
-
 ```sh
 python server.py
 ```
