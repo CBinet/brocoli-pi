@@ -101,8 +101,8 @@ def toggleGroup(id):
 
 # Gets the todays forecast. 
 # Requires a query parameter 'city'.
-@app.route('/weather/today')
-def getWeatherToday():
+@app.route('/weather/current')
+def getWeatherCurrent():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=' + city);

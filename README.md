@@ -119,8 +119,8 @@ group.toggle()
 Working on it :) This is what is available at the moment.
 
 **Routes** :
-- GET/ weather/today?city='city' : *Returns today's weather of 'city'*
-- GET/ weather/forecast?city='city' : *Returns the comming days weather of 'city'*
+- GET/ weather/current?city='city' : *Returns current's weather of 'city'*
+- GET/ weather/forecast?city='city' : *Returns the comming days' weather of 'city'*
 
 **Example response** :
 *GET/ weather/today?city=Quebec* :
