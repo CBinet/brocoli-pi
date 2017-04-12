@@ -18,8 +18,14 @@ app = Flask(__name__)
 # Here is where you instanciate the pins you want to use :
 # Example: 
 #    Output(1, "Red Light") 
+
 # This will setup the GPIO output pin 1 and will put up "Red Light" as the info-label.
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
+# Here is where you instanciate the groups you want to use :
+# Example: 
+#    Group(10, [Output(17, "Fan 1"),Output(18, "Fan 2")], "Fans controller") 
+#
+# This will create a group with output 17 and 18 with the label "Fans controller"
 groups = [Group(0, outputs, "Basic 3 LED group")]
 
 # -- API Routes -- 
