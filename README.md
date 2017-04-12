@@ -39,8 +39,9 @@ python <where-your-server.py-is-located>/server.py
 Then press CTRL+X, Y to save and quit the file editor.
 
 **Example** : Let's say your git repository is located in 
-your home folder. If you want the latest version of *WebPi*,
-then start the server and also add a greeting message, 
+your home folder. If you want to add a greeting message, 
+pull the latest version of *WebPi*
+and also start the server
 you would do something like this :
 ```sh
 echo Greetings, human.
