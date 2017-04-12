@@ -42,11 +42,11 @@ Usage :
 Output(17, "Red Light")
 ```
 ```py
-# This instanciates an Group object.
-# The first argument is the id of the group
-# The second are the outputs to assign to
-# the group. The third argument is
-# a label to keep track of things.
+''' This instanciates an Group object.
+    The first argument is the id of the group
+    The second are the outputs to assign to
+    the group. The third argument is
+    a label to keep track of things. '''
 Group(0, outputs, "Basic 3 LED group")
 ```
 
