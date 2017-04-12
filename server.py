@@ -100,7 +100,7 @@ def toggleGroup(id):
 
 @app.route('/')
 def get_data():
-    return make_response(requests.get(' https://owapi.net/api/v3/u/Viiarge-1583/blob').content, 200)
+    return make_response(requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob').content, 200)
 
 # -- Helper functions --
 
