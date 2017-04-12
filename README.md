@@ -2,38 +2,62 @@
 
 # Installation
 
-### If you don't have git :
+### 0 - You should already have git install. If you don't have git :
 ```sh
 sudo apt-get install git --y
 ```
 
-
-### Clone the repository :
+### 1 - Clone the repository :
 Navigate where you want to create the folder and clone the repository <br>
 ```sh
 git clone https://github.com/WebPI.git
 ```
 
-### Pull the last version
-Navigate where your git local repository is located <br>
-```sh
-git pull origin master
-```
-
-### Launch WebPi normally
+### 2 - Launch WebPi
 ```sh
 python server.py
 ```
 
+### Extras - Setup autorun on bootup
+If you want to start the server automatically when
+you boot up your raspberry pi, you can modify the .profile file
+like this :
+```sh
+sudo nano ~/.profile
+```
+This will open terminal text editor. Add the following line 
+at the end of the file : 
+```sh
+python <where-your-server.py-is-located>/server.py
+```
+For example, your git repository is located in your
+home folder, you want the latest version of WebPi,
+to start the server and add a greeting message, 
+you would do this :
+```sh
+echo Greetings, human.
+cd ~/
+git pull origin master
+python server.py
+```
+
 # Using WebPi
+To run the server
+
+```sh
+python server.py
+```
+
+
+# Modules
 
 ### GPIOControls
 
-Classes :
+**Classes** :
 - **Output** : *Single output pin*
 - **Group** : *Group of output pins*
 
-Usage : 
+**Usage** : 
 ```py
 
 # ...
@@ -65,7 +89,7 @@ group.toggle()
 ```
 
 
-Routes :
+**Routes** :
 - GET/ outputs : *Returns informations of current binded outputs*
 - GET/ outputs/:id : *Returns information of the output at 'id' location*
 - GET/ outputs/:id/toggle : *Toggle the voltage of the output at 'id' location*
