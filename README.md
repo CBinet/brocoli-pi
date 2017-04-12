@@ -62,23 +62,18 @@ python server.py
 
 # ...
 
-# This instanciates an Output object.
-# The first argument is the pin location
-# on your raspberry pi. The second is simply
-# a label to keep track of things.
+# Instanciate an output at location '17'
+# with label "Red Light".
 output = Output(17, "Red Light")
 
-# This will toggle the voltage of the output.
+# Toggles the voltage of 'output'
 output.toggle()
 
-#...
+# ...
 
-# This instanciates an Group object.
-# The first argument is the id of the group
-# The second are the outputs to assign to
-# the group. The third argument is
-# a label to keep track of things.
-group = Group(0, outputs, "Basic 3 LED group")
+# Instanciate a group controlling 'outputs' with
+# the label "LED group"
+group = Group(0, outputs, "LED group")
 
 # This will toggle the voltage of the outputs
 # of the group.
