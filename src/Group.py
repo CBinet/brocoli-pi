@@ -23,7 +23,11 @@ class Group:
 
     # Returns a dictionnary of the object infomations
     def toDict(self):
-        return {'id' : self.id, 'outputs' : output.toDict() for output in self.outputs, 'info' : self.info, 'state' : self.state}
+        rtrn = []
+        for output in self.outputs:
+            rtrn.append(output.toDict())
+
+        return {'id' : self.id, 'outputs' : rtrn, 'info' : self.info, 'state' : self.state}
 
     # Returns a JSON of the object informations
     def toJSON(self):
