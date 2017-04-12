@@ -33,7 +33,7 @@ at the end of the file :
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-Then press CTRL+X, Y to save and quit. <br>
+Then press CTRL+X, Y to save and quit the file editor.
 
 **Example** : if your git repository is located in your
 home folder. If you want the latest version of *WebPi*,
@@ -51,7 +51,6 @@ To run the server
 ```sh
 python server.py
 ```
-
 
 # Modules
 
@@ -117,7 +116,51 @@ group.toggle()
 
 ### Weather
 
-Working on it :)
+Working on it :) This is what is availaible at the moment.
 
+**Routes** :
+- GET/ weather/today?city='city' : *Returns today's weather of 'city'*
+- GET/ weather/forecast?city='city' : *Returns the comming days weather of 'city'*
 
-
+**Example response** :
+*GET/ weather/today?city=Quebec* :
+```json
+{
+  "current": {
+    "precip_mm": 1.7,
+    "last_updated": "2017-04-12 02:15",
+    "wind_degree": 80,
+    "wind_kph": 15.1,
+    "is_day": 0,
+    "temp_f": 34.7,
+    "vis_miles": 5,
+    "temp_c": 1.5,
+    "humidity": 104,
+    "last_updated_epoch": 1491977712,
+    "cloud": 0,
+    "feelslike_c": -2.6,
+    "wind_mph": 9.4,
+    "feelslike_f": 27.3,
+    "wind_dir": "E",
+    "pressure_mb": 1021,
+    "vis_km": 9.3,
+    "precip_in": 0.07,
+    "pressure_in": 30.6,
+    "condition": {
+      "text": "Clear",
+      "code": 1000,
+      "icon": "//cdn.apixu.com/weather/64x64/night/113.png"
+    }
+  },
+  "location": {
+    "name": "Quebec",
+    "country": "Canada",
+    "region": "Quebec",
+    "tz_id": "America/Montreal",
+    "lon": -71.25,
+    "lat": 46.8,
+    "localtime_epoch": 1491978273,
+    "localtime": "2017-04-12 2:24"
+  }
+}
+```
