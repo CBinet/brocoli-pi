@@ -3,6 +3,7 @@
 
 # Imports
 import requests
+import json
 from flask import Flask
 from flask import jsonify,make_response
 from modules.GPIOControls.Output import Output
@@ -100,7 +101,8 @@ def toggleGroup(id):
 
 @app.route('/')
 def get_data():
-    return make_response(requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob').content, 200)
+    r = requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob');
+    return json.dumps(r.json(), indent=4)
 
 # -- Helper functions --
 
