@@ -35,24 +35,33 @@ Classes :
 
 Usage : 
 ```py
+
+# ...
+
 # This instanciates an Output object.
 # The first argument is the pin location
 # on your raspberry pi. The second is simply
 # a label to keep track of things.
 output = Output(17, "Red Light")
+
 # This will toggle the voltage of the output.
 output.toggle()
-```
-```py
+
+#...
+
 # This instanciates an Group object.
 # The first argument is the id of the group
 # The second are the outputs to assign to
 # the group. The third argument is
 # a label to keep track of things.
 group = Group(0, outputs, "Basic 3 LED group")
+
 # This will toggle the voltage of the outputs
 # of the group.
 group.toggle()
+
+# ...
+
 ```
 
 
