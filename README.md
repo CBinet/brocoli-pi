@@ -126,41 +126,29 @@ Working on it :) This is what is available at the moment.
 *GET/ weather/today?city=Quebec* :
 ```json
 {
-  "current": {
-    "precip_mm": 1.7,
-    "last_updated": "2017-04-12 02:15",
-    "wind_degree": 80,
-    "wind_kph": 15.1,
-    "is_day": 0,
-    "temp_f": 34.7,
-    "vis_miles": 5,
-    "temp_c": 1.5,
-    "humidity": 104,
-    "last_updated_epoch": 1491977712,
-    "cloud": 0,
-    "feelslike_c": -2.6,
-    "wind_mph": 9.4,
-    "feelslike_f": 27.3,
-    "wind_dir": "E",
-    "pressure_mb": 1021,
-    "vis_km": 9.3,
-    "precip_in": 0.07,
-    "pressure_in": 30.6,
-    "condition": {
-      "text": "Clear",
-      "code": 1000,
-      "icon": "//cdn.apixu.com/weather/64x64/night/113.png"
-    }
-  },
-  "location": {
-    "name": "Quebec",
-    "country": "Canada",
-    "region": "Quebec",
-    "tz_id": "America/Montreal",
-    "lon": -71.25,
-    "lat": 46.8,
-    "localtime_epoch": 1491978273,
-    "localtime": "2017-04-12 2:24"
+  "precip_mm": 1.7,
+  "last_updated": "2017-04-12 03:15",
+  "wind_degree": 50,
+  "wind_kph": 15.1,
+  "is_day": 0,
+  "temp_f": 36.3,
+  "vis_miles": 5,
+  "temp_c": 2.4,
+  "humidity": 98,
+  "last_updated_epoch": 1491981306,
+  "cloud": 0,
+  "feelslike_c": -1.5,
+  "wind_mph": 9.4,
+  "feelslike_f": 29.3,
+  "wind_dir": "NE",
+  "pressure_mb": 1021,
+  "vis_km": 9.3,
+  "precip_in": 0.07,
+  "pressure_in": 30.6,
+  "condition": {
+    "text": "Clear",
+    "code": 1000,
+    "icon": "//cdn.apixu.com/weather/64x64/night/113.png"
   }
 }
 ```
