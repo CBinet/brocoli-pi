@@ -99,11 +99,20 @@ def toggleGroup(id):
     else:
         return make_response("NOT_FOUND : This group ID is not binded.", 400)
 
-@app.route('/weather')
+@app.route('/weather/today')
 def getWeather():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
+        return make_response(json.dumps(r.json(), indent=4), 200)
+    else :
+        return make_response("INVALID QUERY : Missing the city parameter.", 400)
+
+@app.route('/weather/forecast')
+def getWeather():
+    city = request.args.get('city');
+    if city:
+        r = requests.get('https://api.apixu.com/v1/forecast.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
         return make_response(json.dumps(r.json(), indent=4), 200)
     else :
         return make_response("INVALID QUERY : Missing the city parameter.", 400)
