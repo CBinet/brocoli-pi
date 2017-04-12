@@ -1,5 +1,7 @@
-# WebPI
-
+# WebPi
+WebPi is a Flask WebServer that can do can control your house, 
+tell you what's the weather outside or simply act as a private server
+for whatever reason you would need a private server.
 # Installation
 
 ### Install git :
