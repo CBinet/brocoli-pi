@@ -14,9 +14,9 @@ x = 0
 pin = 17
 while x < 3:
     GPIO.output(pin,True)
-    time.sleep(1)
+    time.sleep(.1)
     GPIO.output(pin,False)
-    time.sleep(1)	
+    time.sleep(.1)	
     x = x + 1
     pin = pin + 1
 
