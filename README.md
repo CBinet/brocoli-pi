@@ -33,6 +33,10 @@ Classes :
 - **Output** : *Single output pin*
 - **Group** : *Group of output pins*
 
+Usage : 
+- **Output** : Output(1, "Red Light") *This will setup the GPIO output pin 1 and will put up "Red Light" as the info-label*
+
+
 Routes :
 - GET/ outputs : *Returns informations of current binded outputs*
 - GET/ outputs/:id : *Returns information of the output at 'id' location*
