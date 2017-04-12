@@ -22,6 +22,8 @@ Launch the server :
 ```sh
 python server.py
 ```
+Your server will then be running locally at address 0.0.0.0:5000.
+From other devices, the address will be something like 192.168.x.xx:5000.
 
 ### Extras - Setup autorun on bootup
 If you want to start the server automatically when
