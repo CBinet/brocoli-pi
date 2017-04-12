@@ -56,11 +56,11 @@ python server.py
 
 ### GPIOControls
 
-**Classes** :
+# **Classes** :
 - **Output** : *Single output pin*
 - **Group** : *Group of output pins*
 
-**Usage** : 
+# **Usage** : 
 ```py
 # Instanciate an output at location '17'
 # with label "Red Light".
@@ -81,7 +81,7 @@ group.toggle()
 ```
 
 
-**Routes** :
+# **Routes** :
 - GET/ outputs : *Returns informations of current binded outputs*
 - GET/ outputs/:id : *Returns information of the output at 'id' location*
 - GET/ outputs/:id/toggle : *Toggle the voltage of the output at 'id' location*
@@ -89,7 +89,7 @@ group.toggle()
 - GET/ groups/:id : *Returns information of the group 'id'*
 - GET/ groups/:id/toggle : *Toggle the voltage of the output of group 'id'*
 
-**Example responses** :
+# **Example responses** :
 
 *GET/ outputs* :
 ```json
@@ -127,11 +127,11 @@ group.toggle()
 
 Working on it :) This is what is available at the moment.
 
-**Routes** :
+# **Routes** :
 - GET/ weather/current?city='city' : *Returns current's weather of 'city'*
 - GET/ weather/forecast?city='city' : *Returns today's forecast of 'city'*
 
-**Example responses** :
+# **Example responses** :
 *GET/ weather/current?city=Quebec* :
 ```json
 {
