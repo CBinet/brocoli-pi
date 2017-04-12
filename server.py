@@ -100,7 +100,7 @@ def toggleGroup(id):
 
 @app.route('/')
 def get_data():
-    return make_response(jsonify(requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=Paris')), 200)
+    return make_response(jsonify(requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=Paris').content), 200)
 
 # -- Helper functions --
 
