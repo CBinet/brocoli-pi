@@ -34,7 +34,21 @@ Classes :
 - **Group** : *Group of output pins*
 
 Usage : 
-- **Output** : Output(1, "Red Light") *This will setup the GPIO output pin 1 and will put up "Red Light" as the info-label*
+```py
+# This instanciates an Output object.
+# The first argument is the pin location
+# on your raspberry pi. The second is simply
+# a label to keep track of things.
+Output(17, "Red Light")
+```
+```py
+# This instanciates an Group object.
+# The first argument is the id of the group
+# The second are the outputs to assign to
+# the group. The third argument is
+# a label to keep track of things.
+Group(0, outputs, "Basic 3 LED group")
+```
 
 
 Routes :
