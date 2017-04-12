@@ -39,7 +39,9 @@ Usage :
 # The first argument is the pin location
 # on your raspberry pi. The second is simply
 # a label to keep track of things.
-Output(17, "Red Light")
+output = Output(17, "Red Light")
+# This will toggle the voltage of the output.
+output.toggle()
 ```
 ```py
 # This instanciates an Group object.
@@ -47,7 +49,10 @@ Output(17, "Red Light")
 # The second are the outputs to assign to
 # the group. The third argument is
 # a label to keep track of things.
-Group(0, outputs, "Basic 3 LED group")
+group = Group(0, outputs, "Basic 3 LED group")
+# This will toggle the voltage of the outputs
+# of the group.
+group.toggle()
 ```
 
 
