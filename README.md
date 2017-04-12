@@ -48,6 +48,10 @@ cd ~/
 git pull origin master
 python server.py
 ```
+You could also run any python script by adding :
+```sh
+python <script.py>
+```
 
 # Using WebPi
 To run the server
