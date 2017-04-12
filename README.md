@@ -89,7 +89,7 @@ group.toggle()
 - GET/ groups/:id : *Returns information of the group 'id'*
 - GET/ groups/:id/toggle : *Toggle the voltage of the output of group 'id'*
 
-**Example response** :
+**Example responses** :
 
 *GET/ outputs* :
 ```json
@@ -114,6 +114,15 @@ group.toggle()
 }
 ```
 
+*GET/ outputs/17/toggle* :
+```json
+    {
+        "id": 17,
+        "info": "Red Light",
+        "state": true
+    }
+```
+
 ### Weather
 
 Working on it :) This is what is available at the moment.
@@ -122,8 +131,8 @@ Working on it :) This is what is available at the moment.
 - GET/ weather/current?city='city' : *Returns current's weather of 'city'*
 - GET/ weather/forecast?city='city' : *Returns today's forecast of 'city'*
 
-**Example response** :
-*GET/ weather/today?city=Quebec* :
+**Example responses** :
+*GET/ weather/current?city=Quebec* :
 ```json
 {
   "precip_mm": 1.7,
@@ -150,5 +159,80 @@ Working on it :) This is what is available at the moment.
     "code": 1000,
     "icon": "//cdn.apixu.com/weather/64x64/night/113.png"
   }
+}
+```
+
+*GET/ weather/forecast?city=Quebec* :
+```json
+{
+  "forecastday": [
+    {
+      "date": "2017-04-12",
+      "astro": {
+        "moonrise": "08:58 PM",
+        "moonset": "07:03 AM",
+        "sunset": "07:30 PM",
+        "sunrise": "06:03 AM"
+      },
+      "date_epoch": 1491955200,
+      "day": {
+        "avgvis_miles": 6,
+        "avghumidity": 84,
+        "totalprecip_mm": 3.6,
+        "avgtemp_c": 3.1,
+        "avgtemp_f": 37.5,
+        "maxwind_mph": 5.8,
+        "mintemp_f": 36,
+        "maxtemp_c": 3.2,
+        "mintemp_c": 2.2,
+        "maxtemp_f": 37.8,
+        "totalprecip_in": 0.14,
+        "maxwind_kph": 9.4,
+        "avgvis_km": 10.4,
+        "condition": {
+          "text": "Light drizzle",
+          "code": 1153,
+          "icon": "//cdn.apixu.com/weather/64x64/day/266.png"
+        }
+      },
+      "hour": [
+        {
+          "heatindex_c": 1.1,
+          "heatindex_f": 34,
+          "will_it_rain": 1,
+          "will_it_snow": 0,
+          "windchill_c": -1.2,
+          "windchill_f": 29.8,
+          "pressure_in": 30.6,
+          "cloud": 100,
+          "precip_mm": 1.7,
+          "is_day": 0,
+          "feelslike_c": -1.2,
+          "condition": {
+            "text": "Light drizzle",
+            "code": 1153,
+            "icon": "//cdn.apixu.com/weather/64x64/night/266.png"
+          },
+          "feelslike_f": 29.8,
+          "wind_mph": 5.8,
+          "dewpoint_c": 2.3,
+          "vis_km": 9.3,
+          "temp_f": 31.1,
+          "temp_c": -0.5,
+          "pressure_mb": 1021,
+          "time_epoch": 1491969600,
+          "precip_in": 0.07,
+          "wind_dir": "ENE",
+          "wind_kph": 9.4,
+          "vis_miles": 5,
+          "humidity": 80,
+          "dewpoint_f": 36.1,
+          "time": "2017-04-12 00:00",
+          "wind_degree": 59
+        },
+        ...
+      ]
+    }
+  ]
 }
 ```
