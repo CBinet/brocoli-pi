@@ -33,7 +33,7 @@ at the end of the file :
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-Then press CTRL+X, Y to save and quit.
+Then press CTRL+X, Y to save and quit. <br>
 
 **Example** : if your git repository is located in your
 home folder. If you want the latest version of *WebPi*,
