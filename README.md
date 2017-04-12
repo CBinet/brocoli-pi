@@ -4,25 +4,25 @@
 
 ### If you don't have git :
 ```sh
-function () { return "sudo apt-get install git --y"}
+sudo apt-get install git --y
 ```
 
 
 ### Clone the repository :
 Navigate where you want to create the folder and clone the repository <br>
 ```sh
-function () { return "git clone https://github.com/WebPI.git"}
+git clone https://github.com/WebPI.git
 ```
 
 ### Pull the last version
 Navigate where your git local repository is located <br>
 ```sh
-function () { return "git pull origin master"}
+git pull origin master
 ```
 
 ### Launch WebPi normally
 ```sh
-function () { return "python server.py "}
+python server.py
 ```
 
 # Using WebPi
