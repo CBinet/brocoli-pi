@@ -16,7 +16,7 @@ class Group:
        self.info = info
        self.state = False
 
-    # Toggles the pin voltage
+    # Toggles the pins voltage
     def toggle(self):
         for output in self.outputs:
             output.toggle()
@@ -26,7 +26,6 @@ class Group:
         rtrn = []
         for output in self.outputs:
             rtrn.append(output.toDict())
-
         return {'id' : self.id, 'outputs' : rtrn, 'info' : self.info, 'state' : self.state}
 
     # Returns a JSON of the object informations

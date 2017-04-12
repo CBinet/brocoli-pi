@@ -13,7 +13,7 @@ class Output:
     def __init__(self, id, info):
         GPIO.setup(id, GPIO.OUT)
         self.id = id
-	self.state = False
+        self.state = False
         self.info = info
 
     # Toggles the pin voltage
