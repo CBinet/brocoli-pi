@@ -4,8 +4,7 @@
 # Imports
 import requests
 import json
-from flask import Flask,Response
-from flask import jsonify,make_response,request
+from flask import Flask,Response,jsonify,request
 from modules.GPIOControls.Output import Output
 from modules.GPIOControls.Group import Group
 import RPi.GPIO as GPIO
@@ -40,7 +39,7 @@ def getOutputs():
     for output in outputs:
         rtrn.append(output.toDict())
     
-    return make_response(jsonify({'results' : rtrn}), 200)
+    return Response(jsonify({'results' : rtrn}), 200, mimetype='application/json')
 
 # Returns the output at location <id>
 # @params id : Id to to match with
@@ -49,9 +48,9 @@ def getOutputs():
 def getOutput(id):
     output = findOutput(id)
     if output:
-        return make_response(output.toJSON(), 200)
+        return Response(output.toJSON(), 200, mimetype='application/json')
     else:
-        return make_response("NOT_FOUND : This output ID is not binded.", 400)
+        return Response("NOT_FOUND : This output ID is not binded.", 400)
 
 # Toggle the voltage on the output at location <id>
 # @params id : Id to to match with
@@ -61,9 +60,9 @@ def toggleOutput(id):
     output = findOutput(id)
     if output:
         output.toggle()
-        return make_response(output.toJSON(), 200)
+        return Response(output.toJSON(), 200, mimetype='application/json')
     else:
-        return make_response("NOT_FOUND : This output ID is not binded.", 400)
+        return Response("NOT_FOUND : This output ID is not binded.", 400)
 
 
 # Returns all of the groups
@@ -74,7 +73,7 @@ def getGroups():
     for group in groups:
         rtrn.append(group.toDict())
     
-    return make_response(jsonify({'results' : rtrn}), 200)
+    return Response(jsonify({'results' : rtrn}), 200, mimetype='application/json')
 
 # Returns the group <id>
 # @params id : Id to to match with
@@ -83,9 +82,9 @@ def getGroups():
 def getGroup(id):
     group = findGroup(id)
     if group:
-        return make_response(group.toJSON(), 200)
+        return Response(group.toJSON(), 200, mimetype='application/json')
     else:
-        return make_response("NOT_FOUND : This group ID is not binded.", 400)
+        return Response("NOT_FOUND : This group ID is not binded.", 400)
 
 # Toggle the voltage on the outputs of group <id>
 # @params id : Id to to match with
@@ -95,9 +94,9 @@ def toggleGroup(id):
     group = findGroup(id)
     if group:
         group.toggle()
-        return make_response(group.toJSON(), 200)
+        return Reponse(group.toJSON(), 200, mimetype='application/json')
     else:
-        return make_response("NOT_FOUND : This group ID is not binded.", 400)
+        return Reponse("NOT_FOUND : This group ID is not binded.", 400)
 
 # Gets the todays forecast. 
 # Requires a query parameter 'city'.
@@ -117,7 +116,7 @@ def getWeatherForecast():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/forecast.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
-        return Response(json.dumps(r.json()['forecast'], indent=4), 200, mimetype='application/json')
+        return Response(json.dumps(r.json(), indent=4), 200, mimetype='application/json')
     else :
         return Reponse("INVALID QUERY : Missing the city parameter.", 400)
 
