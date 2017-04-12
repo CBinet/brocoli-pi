@@ -1,8 +1,7 @@
 # WebPi
 WebPi is a Flask WebServer that can control your house, 
 tell you what's the weather outside or simply act as a private server
-for whatever reason you would need a private server. You do whatever
-you want.
+for whatever reason you would need a private server.
 # Installation
 
 ### Install git :
@@ -40,8 +39,7 @@ Then press CTRL+X, Y to save and quit the file editor.
 
 **Example** : Let's say your git repository is located in 
 your home folder. If you want to add a greeting message, 
-pull the latest version of *WebPi*
-and also start the server
+pull the latest version of *WebPi* and also start the server
 you would do something like this :
 ```sh
 echo Greetings, human.
