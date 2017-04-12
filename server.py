@@ -101,7 +101,8 @@ def toggleGroup(id):
 
 @app.route('/')
 def get_data():
-    r = requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob');
+    headers = {'Content-Type': 'application/json'}
+    r = requests.get('https://owapi.net/api/v3/u/Viiarge-1583/blob', headers);
     return json.dumps(r.json(), indent=4)
 
 # -- Helper functions --
