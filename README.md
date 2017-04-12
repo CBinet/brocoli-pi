@@ -125,27 +125,27 @@ group.toggle()
 
 *GET/ groups/0* :
 ```json
-    {
+{
     "id": 0,
     "info": "Basic 3 LED group",
-        "outputs": [
+    "outputs": [
     {
-      "id": 17,
-      "info": "Red Light",
-      "state": false
+        "id": 17,
+        "info": "Red Light",
+        "state": false
     },
     {
-      "id": 18,
-      "info": "Green Light",
-      "state": false
+        "id": 18,
+        "info": "Green Light",
+        "state": false
     },
     {
-      "id": 19,
-      "info": "Yellow Light",
-      "state": false
+        "id": 19,
+        "info": "Yellow Light",
+        "state": false
     }
   ],
-  "state": false
+    "state": false
 }
 ```
 ## Weather
