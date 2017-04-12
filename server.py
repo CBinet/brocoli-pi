@@ -2,6 +2,7 @@
 # April 11, 2017
 
 # Imports
+import requests
 from flask import Flask
 from flask import jsonify,make_response
 from modules.GPIOControls.Output import Output
@@ -96,6 +97,10 @@ def toggleGroup(id):
         return make_response(group.toJSON(), 200)
     else:
         return make_response("NOT_FOUND : This group ID is not binded.", 400)
+
+@app.route('/')
+def get_data():
+    return requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=Paris').content
 
 # -- Helper functions --
 

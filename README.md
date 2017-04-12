@@ -59,9 +59,6 @@ python server.py
 
 **Usage** : 
 ```py
-
-# ...
-
 # Instanciate an output at location '17'
 # with label "Red Light".
 output = Output(17, "Red Light")
@@ -78,9 +75,6 @@ group = Group(0, outputs, "LED group")
 # This will toggle the voltage of the outputs
 # of the group.
 group.toggle()
-
-# ...
-
 ```
 
 
