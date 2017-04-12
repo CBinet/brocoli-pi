@@ -4,8 +4,8 @@
 # Imports
 from flask import Flask
 from flask import jsonify,make_response
-from src.Output import Output
-from src.Group import Group
+from modules.GPIOControls.Output import Output
+from modules.GPIOControls.Group import Group
 import RPi.GPIO as GPIO
 
 # GPIO setup
