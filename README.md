@@ -50,7 +50,7 @@ python server.py
 ```
 You could also run any python script by adding :
 ```sh
-python <script.py>
+python <where-your-server.py-is-located>/<script.py>
 ```
 
 # Using WebPi
