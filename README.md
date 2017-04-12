@@ -144,7 +144,7 @@ group.toggle()
         "info": "Yellow Light",
         "state": false
     }
-  ],
+    ],
     "state": false
 }
 ```
