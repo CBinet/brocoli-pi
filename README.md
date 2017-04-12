@@ -97,6 +97,31 @@ group.toggle()
 - GET/ groups/:id : *Returns information of the group 'id'*
 - GET/ groups/:id/toggle : *Toggle the voltage of the output of group 'id'*
 
+**Example response** :
+
+*GET/ outputs* :
+```json
+{
+  "results": [
+    {
+      "id": 17,
+      "info": "Red Light",
+      "state": false
+    },
+    {
+      "id": 18,
+      "info": "Green Light",
+      "state": false
+    },
+    {
+      "id": 19,
+      "info": "Yellow Light",
+      "state": false
+    }
+  ]
+}
+```
+
 ### Weather
 
 Working on it :)
