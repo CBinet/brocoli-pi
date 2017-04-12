@@ -106,7 +106,7 @@ def getWeatherCurrent():
     city = request.args.get('city');
     if city:
         r = requests.get('https://api.apixu.com/v1/current.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
-        return Response (json.dumps(r.json()['current'], indent=4), mimetype='application/json' )
+        return Response (json.dumps(r.json()['current'], indent=4), 200, mimetype='application/json' )
     else :
         return make_response("INVALID QUERY : Missing the city parameter.", 400)
 
