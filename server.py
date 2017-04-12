@@ -49,7 +49,7 @@ def getOutput(id):
 # @params id : Id to to match with
 # @return JSON of the selected output
 @app.route('/outputs/<id>/toggle')
-def toggle(id):
+def toggleOutput(id):
     output = findOutput(id)
     if output:
         output.toggle()
@@ -83,7 +83,7 @@ def getGroup(id):
 # @params id : Id to to match with
 # @return JSON of the selected group
 @app.route('/groups/<id>/toggle')
-def toggle(id):
+def toggleGroup(id):
     group = findGroup(id)
     if group:
         group.toggle()
