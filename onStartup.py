@@ -4,6 +4,8 @@ import datetime
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(17, GPIO.OUT)
+GPIO.setup(18, GPIO.OUT)
 GPIO.setup(19, GPIO.OUT)
 
 print ("Time : " + str(datetime.datetime.now().time()))
