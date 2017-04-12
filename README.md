@@ -116,7 +116,7 @@ group.toggle()
 
 ### Weather
 
-Working on it :) This is what is availaible at the moment.
+Working on it :) This is what is available at the moment.
 
 **Routes** :
 - GET/ weather/today?city='city' : *Returns today's weather of 'city'*
