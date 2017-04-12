@@ -2,7 +2,7 @@
 
 # Installation
 
-### 0 - You should already have git install. If you don't have git :
+### 0 - You should already have git installed. If not :
 ```sh
 sudo apt-get install git --y
 ```
@@ -19,18 +19,18 @@ python server.py
 ```
 
 ### Extras - Setup autorun on bootup
-If you want to start the server automatically when
+1 - If you want to start the server automatically when
 you boot up your raspberry pi, you can modify the .profile file
 like this :
 ```sh
 sudo nano ~/.profile
 ```
-This will open terminal text editor. Add the following line 
+2 - This will open terminal text editor. Add the following line 
 at the end of the file : 
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-For example, your git repository is located in your
+Extras - For example, your git repository is located in your
 home folder, you want the latest version of WebPi,
 to start the server and add a greeting message, 
 you would do this :
