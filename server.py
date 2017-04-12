@@ -5,6 +5,7 @@
 from flask import Flask
 from flask import jsonify,make_response
 from src.Output import Output
+from src.Group import Group
 import RPi.GPIO as GPIO
 
 # GPIO setup
@@ -19,6 +20,7 @@ app = Flask(__name__)
 #    Output(1, "Red Light") 
 # This will setup the GPIO output pin 1 and will put up "Red Light" as the info-label.
 outputs = [Output(17, "Red Light"),Output(18, "Green Light"),Output(19, "Yellow Light")]
+groups = [Group(0, outputs, "Basic 3 LED group")]
 
 # -- API Routes -- 
 
