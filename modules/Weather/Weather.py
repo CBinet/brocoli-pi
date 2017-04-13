@@ -8,7 +8,7 @@ class Weather:
     def __init__(self):
        pass
 
-    def getWeatherForecast():
+    def getWeatherForecast(self):
         city = request.args.get('city');
         if city:
             r = requests.get('https://api.apixu.com/v1/forecast.json?key=c0efcc5afb314c0182a35001171204&q=' + city);
