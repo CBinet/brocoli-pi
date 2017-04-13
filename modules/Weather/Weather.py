@@ -8,6 +8,7 @@ class Weather:
     def __init__(self):
        pass
 
+    @staticmethod
     def getWeatherForecast(self):
         city = request.args.get('city');
         if city:
