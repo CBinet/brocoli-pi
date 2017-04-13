@@ -7,7 +7,7 @@ import json
 from flask import Flask,Response,make_response,jsonify,request
 from modules.GPIOControls.Output import Output
 from modules.GPIOControls.Group import Group
-from module.Weather.Weather import Weather
+from modules.Weather.Weather import Weather
 import RPi.GPIO as GPIO
 
 # GPIO setup
