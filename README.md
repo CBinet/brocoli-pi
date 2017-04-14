@@ -1,5 +1,5 @@
 # Brocoli pi
-Brocoli pi - Flask REST API for Raspberry pi
+**Brocoli pi - Flask REST API for Raspberry pi**
 
 # Installation
 
