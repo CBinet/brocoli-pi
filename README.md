@@ -18,7 +18,7 @@ python server.py
 Your server will then be running locally at address http://0.0.0.0:5000. <br>
 From other devices, the address will be your pi address. <br> 
 **Example** : http://192.168.2.51:5000. <br> 
-*You can get your raspberry pi ip address with the following command :*
+*You can get your raspberry pi IP address with the following command :*
 ```sh
 hostname -I
 ```
