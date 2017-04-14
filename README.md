@@ -1,20 +1,19 @@
-# WebPi
-WebPi is a Flask WebServer that can control your house, 
+# Brocoli pi
+Brocoli pi is a Flask REST API that can control your house, 
 tell you what's the weather outside or simply act as a private server
-for whatever reason you would need a private server.
+for whatever reason you would need a private server. <br> 
+It comes with a module to control the GPIO pins of the Rasberry 
+pi it is running on, the **GPIOControls** module. It also comes with a
+weather module, the **Weather** module, which gives you 
+the temperature of any city using a Web API.
+
 # Installation
 
-### Install git :
-Git is installed by default on most raspberrys.
-If git is not installed, you can install it with the following command :
-```sh
-sudo apt-get install git --y
-```
+## Install with git
 
 ### Clone the repository :
-Navigate where you want to create the folder and clone the repository :
 ```sh
-git clone https://github.com/WebPi.git
+git clone https://github.com/CBinet/Brocoli-pi.git
 ```
 
 ### Launch WebPi
@@ -22,26 +21,39 @@ Launch the server :
 ```sh
 python server.py
 ```
-Your server will then be running locally at address 0.0.0.0:5000.
-From other devices, the address will be something like 192.168.x.xx:5000.
+Your server will then be running locally at address http://0.0.0.0:5000. <br>
+From other devices, the address will be something like http://192.168.x.xx:5000.
 
-### Extras - Setup autorun on bootup
+## Install with npm
+
+### Install the package
+```sh
+npm install brocoli-pi
+```
+### Launch WebPi
+Launch the server :
+```sh
+npm start
+```
+
+## **Extras** - Setup autorun on bootup
 If you want to start the server automatically when
-you boot up your raspberry, you can modify the .profile file
+you boot up your raspberry, you can modify the **.profile** file
 with the following command :
 ```sh
 sudo nano ~/.profile
 ```
-This will open your terminal file editor. Add the following line
-at the end of the file :
+
+This will open your terminal file editor. <br> 
+Add the following line at the end of the file :
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-Then press CTRL+X, Y to save and quit the file editor.
+Then press **CTRL+X**, **Y** to save and quit the file editor. <br>
 
 **Example** : Let's say your git repository is located in 
 your home folder. If you want to add a greeting message, 
-pull the latest version of *WebPi* and also start the server
+pull the latest version of *Brocoli-pi* and also start the server
 you would do something like this :
 ```sh
 echo Greetings, human.
@@ -51,10 +63,10 @@ python server.py
 ```
 You could also run any python script by adding :
 ```sh
-python <where-your-server.py-is-located>/<script.py>
+python <where-your-script.py-is-located>/<script.py>
 ```
 
-# Using WebPi
+# Using Brocoli-pi
 To run the server
 ```sh
 python server.py
