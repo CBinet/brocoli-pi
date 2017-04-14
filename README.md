@@ -1,11 +1,5 @@
 # Brocoli pi
-Brocoli pi is a Flask REST API that can control your house, 
-tell you what's the weather outside or simply act as a private server
-for whatever reason you would need a private server. <br> 
-It comes with a module to control the GPIO pins of the Rasberry 
-pi it is running on, the **GPIOControls** module. It also comes with a
-weather module, the **Weather** module, which gives you 
-the temperature of any city using a Web API.
+Brocoli pi - Flask REST API for Raspberry pi
 
 # Installation
 
