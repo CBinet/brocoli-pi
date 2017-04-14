@@ -16,7 +16,8 @@ Launch the server :
 python server.py
 ```
 Your server will then be running locally at address http://0.0.0.0:5000. <br>
-From other devices, the address will be something like http://192.168.2.51:5000. <br> 
+From other devices, the address will be your pi address. <br> 
+**Example** : http://192.168.2.51:5000. <br> 
 *You can get your raspberry pi ip address with the following command :*
 ```sh
 hostname -I
@@ -36,7 +37,7 @@ npm start
 ## **Extras** - Setup autorun on bootup
 If you want to start the server automatically when
 you boot up your raspberry, you can modify your **.profile** file
-located in your home folder :
+located in your raspberry pi home folder :
 ```sh
 sudo nano ~/.profile
 ```
@@ -59,13 +60,12 @@ python server.py
 ```
 
 # Using Brocoli-pi
-To run the server
+To run the server :
 ```sh
 python server.py
 ```
-Once the server is started, you can access it at http://0.0.0.0:5000. <br>
-You can test it by navigating to http://0.0.0.0:5000/outputs. You should see a 
-list of your outputs.
+Once the server is started, you can test it by navigating to http://0.0.0.0:5000/outputs. <br> 
+You should see a list of your outputs.
 
 # Modules
 
