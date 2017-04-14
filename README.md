@@ -10,13 +10,17 @@
 git clone https://github.com/CBinet/Brocoli-pi.git
 ```
 
-### Launch WebPi
+### Launch Brocoli pi
 Launch the server :
 ```sh
 python server.py
 ```
 Your server will then be running locally at address http://0.0.0.0:5000. <br>
-From other devices, the address will be something like http://192.168.x.xx:5000.
+From other devices, the address will be something like http://192.168.2.51:5000. <br> 
+*You can get your raspberry pi ip address with the following command :*
+```sh
+hostname -I
+```
 
 ## Install with npm
 
@@ -24,26 +28,24 @@ From other devices, the address will be something like http://192.168.x.xx:5000.
 ```sh
 npm install brocoli-pi
 ```
-### Launch WebPi
-Launch the server :
+### Launch Brocoli pi
 ```sh
 npm start
 ```
 
 ## **Extras** - Setup autorun on bootup
 If you want to start the server automatically when
-you boot up your raspberry, you can modify the **.profile** file
-with the following command :
+you boot up your raspberry, you can modify your **.profile** file
+located in your home folder :
 ```sh
 sudo nano ~/.profile
 ```
 
-This will open your terminal file editor. <br> 
 Add the following line at the end of the file :
 ```sh
 python <where-your-server.py-is-located>/server.py
 ```
-Then press **CTRL+X**, **Y** to save and quit the file editor. <br>
+Then press **CTRL+X**, **Y** to save and quit the file editor. <br> <br>
 
 **Example** : Let's say your git repository is located in 
 your home folder. If you want to add a greeting message, 
@@ -55,16 +57,15 @@ cd ~/
 git pull origin master
 python server.py
 ```
-You could also run any python script by adding :
-```sh
-python <where-your-script.py-is-located>/<script.py>
-```
 
 # Using Brocoli-pi
 To run the server
 ```sh
 python server.py
 ```
+Once the server is started, you can access it at http://0.0.0.0:5000. <br>
+You can test it by navigating to http://0.0.0.0:5000/outputs. You should see a 
+list of your outputs.
 
 # Modules
 
